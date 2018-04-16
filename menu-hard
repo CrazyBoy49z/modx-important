@@ -1,0 +1,14 @@
+[[pdoMenu? 
+  &level=`2` 
+  &parents=`0`
+  &parentClass=``
+  &outerClass=``
+  &tplOuter=`@INLINE <ul [[+classes]] id="menu">[[+wrapper]]</ul>` 
+  &tplInner=`@INLINE <ul class="drop-menu">[[+wrapper]]</ul>`
+  &tplParentRow=`@INLINE <li [[+classes]]>
+                              <a href="[[+link]]" [[+attributes]]>
+                                  [[+menutitle]]<span class="caret"></span>
+                              </a>
+                              [[+wrapper]]
+                          </li>`
+]]
