@@ -1,14 +1,50 @@
 [[pdoMenu? 
-  &level=`2` 
-  &parents=`0`
-  &parentClass=``
-  &outerClass=``
-  &tplOuter=`@INLINE <ul [[+classes]] id="menu">[[+wrapper]]</ul>` 
-  &tplInner=`@INLINE <ul class="drop-menu">[[+wrapper]]</ul>`
-  &tplParentRow=`@INLINE <li [[+classes]]>
-                              <a href="[[+link]]" [[+attributes]]>
-                                  [[+menutitle]]<span class="caret"></span>
-                              </a>
-                              [[+wrapper]]
-                          </li>`
+    &level=`2` 
+    &parents=`5`
+    &outerClass=`dropdown menu`
+    &parentClass=`li-item parent`
+    &tplOuter=`@INLINE <ul [[+classes]]">[[+wrapper]]</ul>` 
+    &tpl=`@INLINE <li class="li-item"><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a></li>`
+    &tplParentRow=`@INLINE <li [[+classes]]>
+                                <a href="[[+link]]" id="fgh222222" class="fghgfh" style="fghgfhf3333" [[+attributes]]>
+                                    [[+menutitle]]<span class="caret"></span>
+                                </a>
+                                [[+wrapper]]
+                            </li>`
+    &tplInner=`@INLINE <ul class="dropdown menu">[[+wrapper]]</ul>`
+    &tplInnerRow=`@INLINE <li class="li-item"><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a></li>`
 ]]
+
+&tplOuter - чанк обертка всего блока меню, т.е обертка для главного ul, класс для ul [[+classes]] = &outerClass
+&tpl - чанк оформление пункта меню li первого уровня, без дочерних категорий
+&tplParentRow - чанк оформления контейнера с потомками, это то как будет выглядить выпадающий список li, [[+classes]] берется 
+  из &parentClass, [[+menutitle]] = &tplInner
+&tplInnerRow - чанк оформления дочернего li 2го уровня
+
+<ul class="dropdown menu"><li class="li-item"><a href="o_klinike">О клинике</a></li>
+    <li class="li-item"><a href="doctors">Врачи</a></li>
+    <li class="li-item parent">
+        <a href="katalog_yslyg" id="fgh222222" class="fghgfh" style="fghgfhf3333">Услуги</a>
+        <div class="open-nav-sub2"></div>
+        <div class="close-nav-sub2"></div>
+        <span class="mn-button"></span>
+        <ul class="dropdown menu">
+            <li class="li-item"><a href="katalog_yslyg/lechenie_zybov">Лечение зубов</a></li>
+            <li class="li-item"><a href="katalog_yslyg/protezirovanie_zybov">Зубные протезы</a></li>
+            <li class="li-item"><a href="katalog_yslyg/implantaciya_zybov">Имплантация зубов</a></li>
+            <li class="li-item"><a href="katalog_yslyg/ortodontiya">Исправление прикуса</a></li>
+            <li class="li-item"><a href="katalog_yslyg/lechenie_dyosen">Лечение десен</a></li>
+            <li class="li-item"><a href="katalog_yslyg/hiryrgicheskaya_stomatologiya">Удаление зубов</a></li>
+            <li class="li-item"><a href="katalog_yslyg/otbelivanie_zybov">Отбеливание зубов</a></li>
+            <li class="li-item"><a href="katalog_yslyg/gigiena_polosti_rta">Гигиена полости рта</a></li>
+            <li class="li-item"><a href="katalog_yslyg/esteticheskaya-stomatologiya">Эстетическая стоматология</a></li>
+            <li class="li-item"><a href="http://www.voka-stom.ru/katalog_yslyg/neyromyshechnaya_stomatologiya">Нейромышечная стоматология</a></li>
+        </ul>
+    </li>
+    <li class="li-item"><a href="ceni">Цены</a></li>
+    <li class="li-item"><a href="reviews">Отзывы</a></li>
+    <li class="li-item"><a href="novosti">Новости</a></li>
+    <li class="li-item"><a href="akciya">Акции</a></li>
+    <li class="li-item"><a href="stati">Статьи</a></li>
+    <li class="li-item"><a href="feedback">Контакты</a></li>
+</ul>  
