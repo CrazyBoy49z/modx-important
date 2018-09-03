@@ -1,0 +1,52 @@
+form-tpl   ----------------------------------
+<div id="contact_form">
+    <h3>Обратная связь</h3>         
+         [+validationmessage+]       
+    <form method="post" action="[~[*id*]~]#form-call-back">
+
+          <input type="hidden" name="formid" value="Send" />
+          <label for="author">Ваше имя</label> <input type="text" id="author" name="author" class="required input_field" eform="Имя::1" />
+          <div class="cleaner_h10"></div>
+
+          <label for="email">Email:</label> <input type="text" id="email" name="email" class="validate-email required input_field" eform="Адрес электронной почты:email:1" />
+          <div class="cleaner_h10"></div>
+
+          <label for="otdel">Тема сообщения</label> 
+          <select name="otdel" class="input_field">
+              <option value="1">Запрос информации</option>
+              <option value="2">Техническая поддержка</option>
+              <option value="3">Предложение</option>
+          </select>
+          <div class="cleaner_h10"></div>
+
+          <label for="text">Текст сообщения</label> <textarea id="text" name="text" rows="0" cols="0" class="required" eform="Текст сообщения:html:1"></textarea>
+          <div class="cleaner_h10"></div>
+
+          <input type="submit" class="submit_btn" name="submit" id="submit" value=" Отправить " />
+          <input type="reset" class="submit_btn" name="reset" id="reset" value=" Сбросить " />
+
+    </form>
+</div>
+
+ thank-tpl    --------------------------------------
+ <strong>Спасибо, что воспользовались формой обратной связи на нашем сайте.</strong>
+<p>Ваше сообщение будет рассмотрено в кротчайшие сроки, и, если оно требует ответа, Вы обязательно его получите.</p>
+<p>Отправленная информация:</p>
+<ul>
+<li><b>Ваше имя:</b> [+author+]</li>
+<li><b>Ваш e-mail:</b> [+email+]</li>
+<li><b>Текст сообщения:</b> [+text+]</li>
+</ul>
+
+report-tpl --------------------------------------
+<p>Это сообщение было отправлено посетителем по имени [+author+] с помощью формы обратной связи. </p>
+<table>
+<tr valign="top"><td><b>Имя:</b></td><td>[+author+]</td></tr>
+<tr valign="top"><td><b>Email:</b>:</td><td>[+email+]</td></tr>
+<tr valign="top"><td><b>Сообщение:</b></td><td>[+text+]</td></tr>
+</table>
+
+form ---------------------------------------------
+[!eForm? &formid=`Send` &tpl=`form-tpl` &to=`info@site.ru,support@site.ru,requests@site.ru` &mailselector=`otdel` 
+&report=`report-tpl` &thankyou=`thank-tpl` &subject=`Сообщение с моего сайта`!]
+
