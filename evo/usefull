@@ -1,0 +1,25 @@
+<div class="breadcrumb-column col-md-6 col-sm-4 col-xs-12">
+  [!Breadcrumbs? &templateSet=`defaultList` &crumbSeparator=` / ` &ignoreIds=`4`!]
+</div>
+-----------------------------------------
+[!Ditto? &tpl=`portfolio-item` &parents=`11` &orderBy=`pagetitle ASC` &id=`news` &paginate=`1` &display=`24`!]
+<ul class="clearfix">
+  [+news_previous+][+news_pages+][+news_next+]
+</ul>
+
+<div class="post-content">
+  <div class="post-image">
+    <img src="[[phpthumb? &input=`[+img+]` &options=`w=707,h=534,zc=C`]]" alt="">
+  </div>
+  <div >
+    <h3><a href="[+url+]">[+pagetitle+]</a></h3>
+    <p class="fontsize14">[[summary? &text=`[+content+]` &len=`150`]]</p>
+  </div>
+  <div class="text-right">
+    <a href="[+url+]" class="btn-more text-right">Читать далее</a>
+  </div>
+</div>
+-----------------------------------------
+[[summary? &text=`[*content*]` &len=`300` &tags=`1`]] - ограничение по выводы длины
+-----------------------------------------
+<img src="[[phpthumb? &input=`[+img+]` &options=`w=470,h=276,zc=C`]]" alt="" />
