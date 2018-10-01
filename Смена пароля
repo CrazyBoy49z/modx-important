@@ -1,0 +1,7 @@
+MODX REVO
+Открываем таблицу mod_users в phpMyAdmin (или что там у вас стоит для управления базой) и меняем значения полей на эти:
+password: kXXEPN9pTwdXnaSlDvUzaJcR2y/1XzCqs9AXcxOzFdQ=
+salt: 18de7acfa078ec932d6d09f18cf0dbac
+
+теперь пароль password321
+Если админ заблокировался (всякое бывает), то ставим в поле active цифру 1.
